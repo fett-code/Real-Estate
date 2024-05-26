@@ -118,7 +118,6 @@ const PropertyCard = ({property}) => {
     return (
         <>
             <div onClick={()=>setModalOpen(true)} className='w-full aspect-3/4 bg-primary/10 flex flex-col items-center justify-center cursor-pointer hover:bg-primary/20 rounded-xl p-6 gap-3'>
-                {user?.token && user.email===property.sellerEmail && <div className='italic'>Hosted by you</div>}
                 <div className='h-1/2 overflow-hidden flex items-center rounded-xl mb-1'>
                     <img src={property.image ? property.image : Logo} alt="" className='rounded-xl'/>
                 </div>
@@ -129,12 +128,15 @@ const PropertyCard = ({property}) => {
                     </span>
                     <span>/month</span>
                 </div>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 text-center'>
                     <span className='italic text-neutral-500'>{property.location}, {property.city}</span>
                 </div>
-                <div className='flex items-center gap-1 text-xl'>
-                    {liked ? <GoHeartFill className='text-red-600' size={24}/> : <GoHeart/>}
-                    <span className={`${liked ? 'text-red-500' : ''}`}>{property.likes}</span>
+                <div className='flex items-center justify-center gap-3 text-xl w-full'>
+                    {user?.token && user.email===property.sellerEmail && <div className='italic text-sm leading-2 text-center w-1/2'>Hosted by you</div>}
+                    <div className='flex items-center justify-center gap-1 w-1/2'>
+                        {liked ? <GoHeartFill className='text-red-600' size={24}/> : <GoHeart/>}
+                        <span className={`${liked ? 'text-red-500' : ''}`}>{property.likes}</span>
+                    </div>
                 </div>
             </div>
             <ConfigProvider
@@ -202,15 +204,15 @@ const PropertyCard = ({property}) => {
                        
 
                         {user?.token && 
-                        <div className='flex items-center gap-2'>
-                            <div onClick={liked ? handleDislike : handleLike} className='flex items-center gap-1 text-[15px] bg-red-600/20 px-3 py-1.5 rounded-md hover:bg-red-600/60 hover:text-white cursor-pointer duration-200 transition-all'>
+                        <div className='flex items-center gap-1'>
+                            <div onClick={liked ? handleDislike : handleLike} className='flex items-center gap-1 text-[15px] bg-red-600/20 px-3 py-[4.5px] rounded-md hover:bg-red-600/60 hover:text-white cursor-pointer duration-200 transition-all'>
                                 {!liked ? <GoHeart/> : <GoHeartFill className='text-red-600' />}
                                 <span>{liked ? 'Dislike' : 'Like'}</span>
                             </div>
                             {user.email!==property.sellerEmail ?
                             <Button onClick={quoteHandler} className='bg-primary text-white'>Get Quote</Button> : 
                             <div className='flex items-center gap-1'>
-                                <Button onClick={()=>setEdit(true)} className='bg-primary text-white'>Edit Property</Button>
+                                <Button onClick={()=>setEdit(true)} className='bg-primary border-primary text-white'>Edit Property</Button>
                                 <ConfigProvider theme={{token:{colorPrimary:'red'}}}><Button onClick={deleteHandler} className='border-red-600 text-red-600'>Delete Property</Button></ConfigProvider>
                             </div>}
                         </div>
