@@ -61,7 +61,7 @@ const Rent = () => {
         </div> : 
         <div className='w-full h-[80vh] flex flex-col items-center justify-center'>
             <IoHome className='text-primary/50 text-9xl'/>
-            <span className='text-primary/50 text-4xl text-center'>Login to <br/>List your Properties!</span>
+            <span className='text-primary/50 text-4xl text-center'>Login/Register to <br/>List your Properties!</span>
         </div>
     )
 }

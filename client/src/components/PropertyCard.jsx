@@ -23,32 +23,33 @@ const PropertyCard = ({property}) => {
     },[user])
 
     const quoteHandler = ()=>{
+        setLoading(true);
         const templateParams = {
             to_email: user.email,
             to_name: user.firstName,
             subject: 'Property renting quote request',
-            message: `This is in response to the property that you were interested in on our platform.\nHere are the seller details:\nSeller Email: ${property.sellerEmail}\nSeller Phone: ${property.sellerPhone}\n\nPlease contact the seller for further details.\n`,
+            message: `This is in response to the property that you were interested in on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the seller details:\nSeller Email: ${property.sellerEmail}\nSeller Phone: ${property.sellerPhone}\n\nPlease contact the seller for further details.\n`,
         };
-        console.log(import.meta.env.VITE_EMAILJS_SERVICE_NAME);
         emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), templateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
         .then((result) => {
-            message.success('Quote request sent successfully');
+            message.success('Quote sent to your mail successfully!');
         }, (error) => {
-            message.error('Error sending quote request');
+            message.error('Error sending quote to your mail');
         });
 
         const newTemplateParams = {
             to_email: property.sellerEmail,
             to_name: 'Renter',
             subject: 'Your property listing is getting attention!',
-            message: `This is in response to the property that you have listed on our platform.\nHere are the interested user's details:\nUser Email: ${user.email}\nUser Phone: ${user.phoneNumber}\n\nPlease contact the seller for further details.\n`,
+            message: `This is in response to the property that you have listed on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the interested user's details:\nUser Email: ${user.email}\nUser Phone: ${user.phoneNumber}\n\nPlease contact the seller for further details.\n`,
         }
         emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), newTemplateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
         .then((result) => {
-            message.success('Quote request sent successfully');
+            message.success('Quote request sent to seller successfully!');
         }, (error) => {
-            message.error('Error sending quote request');
+            message.error('Error sending quote request to seller');
         });
+        setLoading(false);
     }
 
     const handleLike = async ()=>{
@@ -121,7 +122,7 @@ const PropertyCard = ({property}) => {
                 <div className='h-1/2 overflow-hidden flex items-center rounded-xl mb-1'>
                     <img src={property.image ? property.image : Logo} alt="" className='rounded-xl'/>
                 </div>
-                <div className='flex items-center gap-0 text-xl'>
+                <div className='flex items-center gap-0 text-lg sm:text-xl'>
                     <span className='flex items-center gap-1'>
                         <FaIndianRupeeSign/>
                         {property.price}
@@ -153,7 +154,7 @@ const PropertyCard = ({property}) => {
                     onOk={()=>{setModalOpen(false); setEdit(false);}}
                     width={edit ? 'fit-content' : '400px'}
                 >
-                    {!edit ? <div className='flex flex-col items-center gap-4 p-5 h-full'>
+                    {!edit ? <div className='flex flex-col items-center gap-4 p-3 sm:p-5 h-full'>
                         <div className='max-h-[35vh] overflow-hidden flex items-center rounded-xl'>
                             <img src={property.image ? property.image : Logo} alt="" className='rounded-xl'/>
                         </div>

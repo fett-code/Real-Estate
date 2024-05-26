@@ -84,7 +84,7 @@ const Header = () => {
                                 </div>
                                 <div className='flex items-center gap-2'>
                                     <Button onClick={logoutHandler} type='primary'>Logout</Button>
-                                    <Button type='primary' className='bg-primary border-primary hover:bg-white hover:text-primary'>Edit Profile</Button>
+                                    {/* <Button type='primary' className='bg-primary border-primary hover:bg-white hover:text-primary'>Edit Profile</Button> */}
                                 </div>
                             </div>
                         </div>
