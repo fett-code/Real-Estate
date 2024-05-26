@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 
 const CustomSwitch = ({currOption,setOption,options=[]}) => {
     return (
-        <div className='rounded-lg flex items-center justify-center w-full'>
+        <div className='rounded-lg flex items-center justify-center w-full gap-1'>
             {options.map(option=>(
                 <div
                     key={option}

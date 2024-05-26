@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Modal, ConfigProvider, Button } from 'antd'
+import { Modal, ConfigProvider, Button, message } from 'antd'
 import Login from './Login'
 import Signup from './Signup'
 import CustomSwitch from './CustomSwitch'
@@ -19,6 +19,7 @@ const Header = () => {
         localStorage.removeItem('currUser');
         setModalOpen(false);
         navigate('/');
+        message.success('Logged out successfully!');
     }
 
     return (

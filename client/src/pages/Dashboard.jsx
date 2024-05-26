@@ -10,16 +10,6 @@ import { message } from 'antd';
 const Dashboard = () => {
     const {user,properties,setProperties,loading,setLoading} = useContext(AppContext);
     const [currPage,setCurrPage] = useState('Find');
-    // const [options,setOptions] = useState([]);
-
-    // useLayoutEffect(()=>{
-    //     if(user?.token){
-    //         setOptions(['Find','Rent','Liked']);
-    //     }else{
-    //         setOptions(['Find']);
-    //     }
-    //     console.log('hh');
-    // },[user])
 
     useEffect(()=>{
         ;(async ()=>{
