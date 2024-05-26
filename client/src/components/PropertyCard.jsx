@@ -7,6 +7,7 @@ import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import EditProperty from './EditProperty';
 import { deleteProperty, getAllProperties, likeProperty, dislikeProperty } from '../api/property';
+import emailjs from '@emailjs/browser'
 
 
 const PropertyCard = ({property}) => {
@@ -28,6 +29,7 @@ const PropertyCard = ({property}) => {
             subject: 'Property renting quote request',
             message: `This is in response to the property that you were interested in on our platform.\nHere are the seller details:\nSeller Email: ${property.sellerEmail}\nSeller Phone: ${property.sellerPhone}\n\nPlease contact the seller for further details.\n`,
         };
+        console.log(import.meta.env.VITE_EMAILJS_SERVICE_NAME);
         emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), templateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
         .then((result) => {
             message.success('Quote request sent successfully');

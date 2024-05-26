@@ -15,7 +15,7 @@ connectDB();
 
 app.use(cors(
     {
-        origin: ['http://localhost:5173'],
+        origin: ['https://rentify-harshpx.vercel.app','http://localhost:5173'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true
