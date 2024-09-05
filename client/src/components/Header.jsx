@@ -26,7 +26,7 @@ const Header = () => {
         <div className='w-full flex items-center justify-between px-5 h-[50px] bg-primary text-white'>
             <div className='flex items-center gap-3'>
                 <img src={Logo} alt="" className='size-8'/>
-                <span className='text-xl'>Rentify</span>
+                <span className='text-xl'>ASSAHOUSE</span>
             </div>
             <button 
                 onClick={()=>setModalOpen(true)} 

@@ -18,7 +18,7 @@ const Login = ({setModalOpen}) => {
     useOutsideClick(ref,()=>{form.resetFields()})
     
     const onSubmit = (values) => {
-        ;(async()=>{
+        (async()=>{
             try {
                 setLoading(true);
                 const response = await loginFunc(values);

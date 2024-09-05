@@ -13,19 +13,28 @@ const Find = () => {
         setList(filteredList);
     },[user,properties])
 
-    const cityOptions = [
-        {value: 'Delhi', label: 'Delhi'},
-        {value: 'Mumbai', label: 'Mumbai'},
-        {value: 'Kolkata', label: 'Kolkata'},
-        {value: 'Chennai', label: 'Chennai'},
-        {value: 'Bangalore', label: 'Bangalore'},
-        {value: 'Hyderabad', label: 'Hyderabad'},
-        {value: 'Pune', label: 'Pune'},
-        {value: 'Nagpur', label: 'Nagpur'},
-        {value: 'Kochi', label: 'Kochi'},
-        {value: 'Trivendrum', label: 'Trivendrum'},
-        {value: 'Indore', label: 'Indore'},
-    ];
+    const cityOptions =[ 
+    { value: 'Casablanca', label: 'Casablanca' },
+    { value: 'Rabat', label: 'Rabat' },
+    { value: 'Marrakech', label: 'Marrakech' },
+    { value: 'Fes', label: 'Fes' },
+    { value: 'Tangier', label: 'Tangier' },
+    { value: 'Agadir', label: 'Agadir' },
+    { value: 'Meknes', label: 'Meknes' },
+    { value: 'Oujda', label: 'Oujda' },
+    { value: 'Tetouan', label: 'Tetouan' },
+    { value: 'Kenitra', label: 'Kenitra' },
+    { value: 'Safi', label: 'Safi' },
+    { value: 'Nador', label: 'Nador' },
+    { value: 'El Jadida', label: 'El Jadida' },
+    { value: 'Laayoune', label: 'Laayoune' },
+    { value: 'Mohammedia', label: 'Mohammedia' },
+    { value: 'Beni Mellal', label: 'Beni Mellal' },
+    { value: 'Khemisset', label: 'Khemisset' },
+    { value: 'Errachidia', label: 'Errachidia' },
+    { value: 'Taza', label: 'Taza' },
+    { value: 'Settat', label: 'Settat' }
+  ];
 
     const roomOptions = [
         {value: 1, label: '1 BHK'},

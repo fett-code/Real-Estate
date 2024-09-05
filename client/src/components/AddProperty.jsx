@@ -10,7 +10,11 @@ const AddProperty = ({setModalOpen}) => {
     const { user, properties, setProperties, loading, setLoading } = useContext(AppContext);
     const [fileList, setFileList] = useState([]);
 
-    const cities = ['Delhi', 'Mumbai', 'Kolkata', 'Chennai', 'Bangalore','Hyderabad','Pune','Nagpur','Kochi','Trivendrum','Indore'];
+    const cities = [
+  'Casablanca',"Rabat","Marrakech","Fes","Tangier","Agadir","Meknes",
+  "Oujda","Tetouan","Kenitra","Safi","Nador","El Jadida","Laayoune",
+  "Mohammedia","Beni Mellal","Khemisset","Errachidia","Taza","Settat"
+];
     const facilities = ['School', 'Hospital', 'Supermarket', 'Park', 'Mall', 'Metro', 'Bus Stop', 'Railway Station', 'Airport', 
     'Highway', 'Petrol Pump', 'ATM', 'Bank', 'Market', 'College'];
 
@@ -102,7 +106,7 @@ const AddProperty = ({setModalOpen}) => {
 
                     <Form.Item
                         name="price"
-                        label="Price (INR)"
+                        label="Price (USD)"
                         rules={[{ required: true, message: 'Please input the price!' }]}
                     >
                         <InputNumber style={{ width: '100%' }} />
