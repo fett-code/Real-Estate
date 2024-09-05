@@ -52,7 +52,7 @@ const Login = ({setModalOpen}) => {
             <ConfigProvider
                 theme={{
                     token: {
-                        colorPrimary: '#00a200',
+                        colorPrimary: '#1D3557',
                     }
                 }}
             >

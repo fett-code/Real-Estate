@@ -7,11 +7,19 @@ export default {
   theme: {
     extend: {
       colors:{
-        'primary': '#00a200',
+        'primary': '#1D3557',
+        'custom-text': '#F1FAEE',
+        'second-text': '#1D3557',
+        'custom-hover': '#1D3557'
       },
       aspectRatio: {
         '3/4': '3 / 4',
       }
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['hover'],
     },
   },
   plugins: [],

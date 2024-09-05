@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [currPage,setCurrPage] = useState('Find');
 
     useEffect(()=>{
-        ;(async ()=>{
+        (async ()=>{
             try {
                 setLoading(true);
                 const response = await getAllProperties();

@@ -3,6 +3,8 @@ import AppContext from '../AppContext'
 import PropertyCard from './PropertyCard'
 import LoaderFull from './LoaderFull'
 import { Select, ConfigProvider } from 'antd'
+import 'antd/dist/reset.css'; // Ensure you import Ant Design's default styles
+import './global.css'; // Import your global CSS file
 
 const Find = () => {
     const {user,properties,loading} = useContext(AppContext);
@@ -97,7 +99,7 @@ const Find = () => {
 
     return (
         <div className='flex flex-col items-center justify-center'>
-            <ConfigProvider theme={{token:{colorPrimary:'#00a200', colorBorder:'#00a200', colorTextPlaceholder:'#00a200'}}}>
+            <ConfigProvider theme={{token:{colorPrimary:'#1D3557', colorBorder:'#1D3557', colorTextPlaceholder:'#1D3557'}}}>
                 <div className='flex flex-wrap items-center justify-center gap-1'>
                     <Select
                         defaultValue={null}
@@ -107,6 +109,7 @@ const Find = () => {
                         onChange={handleCityFilter}
                         placeholder='City filter'
                         width='fit-content'
+                        className='custom-select'
                     />
                     <Select
                         defaultValue={null}
@@ -116,6 +119,7 @@ const Find = () => {
                         onChange={handleRoomFilter}
                         placeholder='Rooms filter'
                         width='fit-content'
+                        className='custom-select'
                     />
                     <Select
                         defaultValue={null}
@@ -125,6 +129,7 @@ const Find = () => {
                         onChange={handlePriceFilter}
                         placeholder='Price filter'
                         width='fit-content'
+                        className='custom-select'
                     />
                 </div>
             </ConfigProvider>

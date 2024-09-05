@@ -3,7 +3,7 @@ import { Modal, ConfigProvider, message, Button } from 'antd';
 import { useContext } from 'react';
 import AppContext from '../AppContext';
 import Logo from '../assets/logo.png'
-import { FaIndianRupeeSign } from "react-icons/fa6";
+import { FaDollarSign } from "react-icons/fa6";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import EditProperty from './EditProperty';
 import { deleteProperty, getAllProperties, likeProperty, dislikeProperty } from '../api/property';
@@ -123,7 +123,7 @@ const PropertyCard = ({property}) => {
                 </div>
                 <div className='flex items-center gap-0 text-lg sm:text-xl'>
                     <span className='flex items-center gap-1'>
-                        <FaIndianRupeeSign/>
+                        <FaDollarSign/>
                         {property.price}
                     </span>
                     <span>/month</span>
@@ -163,7 +163,7 @@ const PropertyCard = ({property}) => {
                         <div className='flex items-center gap-1 text-xl'>
                             <span className='text-lg'>Price:</span>
                             <div className='flex items-center'>
-                                <FaIndianRupeeSign className=''/>
+                                <FaDollarSign className=''/>
                                 <span className=''>{property.price}/Month</span>
                             </div>
                         </div>

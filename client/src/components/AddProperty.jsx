@@ -76,7 +76,7 @@ const AddProperty = ({setModalOpen}) => {
         <ConfigProvider
             theme={{
                 token: {
-                    colorPrimary: '#00a200',
+                    colorPrimary: 'custom-text',
                 },
             }}
         >

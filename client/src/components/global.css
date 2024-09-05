@@ -1,0 +1,20 @@
+/* global.css */
+.custom-select .ant-select-selector {
+  transition: background-color 0.3s ease;
+  border: 1px solid #ccc; /* Default border color */
+}
+
+.custom-select:hover .ant-select-selector {
+  background-color: #FFFFFF; /* Custom hover background color */
+  color: #FFFFFF; /* Custom text color on hover */
+}
+
+.custom-select .ant-select-selector:focus {
+  border-color: #ccc; /* Maintain default border color on focus */
+  box-shadow: none; /* Remove default focus shadow */
+}
+
+.custom-select .ant-select-selector:active {
+  border-color: #ccc; /* Maintain default border color on active */
+  box-shadow: none; /* Remove default active shadow */
+}
